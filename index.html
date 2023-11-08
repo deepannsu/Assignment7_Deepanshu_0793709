@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>DEEPANSHU</h1>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Part 1: Personal Information -->
+            <div class="swiper-slide">
+                <h2>Part 1: Personal Information</h2>
+                <form id="personal-info-form" action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                </form>
+            </div>
+
+            <!-- Part 2: Contact Information -->
+            <div class="swiper-slide">
+                <h2>Part 2: Contact Information</h2>
+                <form id="contact-info-form" action="#" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required
+                        oninvalid="this.setCustomValidity('Please enter a valid email address.')"
+                        onchange="this.setCustomValidity('')">
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required
+                        pattern="[0-9]{10}"
+                        oninvalid="this.setCustomValidity('Please enter a valid 10-digit phone number.')"
+                        onchange="this.setCustomValidity('')">
+
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" required></textarea>
+                </form>
+            </div>
+
+            <!-- Part 3: Payment Information -->
+            <div class="swiper-slide">
+                <h2>Part 3: Payment Information</h2>
+                <form id="payment-info-form" action="#" method="post">
+                    <label for="credit-card">Credit Card Number:</label>
+                    <input type="text" id="credit-card" name="credit-card" required
+                        pattern="[0-9]{10}"
+                        data-validation="custom"
+                        data-validation-regexp="[0-9]{10}"
+                        data-validation-error-msg="Please enter a valid 10-digit credit card number.">
+
+                    <label for="expiry-date">Expiration Date:</label>
+                    <input type="date" id "expiry-date" name="expiry-date" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required
+                        pattern="[0-9]{3}"
+                        data-validation="custom"
+                        data-validation-regexp="[0-9]{3}"
+                        data-validation-error-msg="Please enter a valid 3-digit CVV number.">
+                </form>
+            </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script src="validate.min.js"></script>
+    <script src="swiper.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

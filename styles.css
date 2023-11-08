@@ -1,0 +1,60 @@
+/* Common CSS for all screen sizes */
+body {
+   font-family: Arial, sans-serif;
+}
+
+form {
+   margin: 20px;
+   padding: 20px;
+}
+
+label {
+   display: block;
+   margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+input[type="radio"],
+textarea,
+select {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 20px;
+}
+
+/* Media query for tablet/desktop (above 601px) */
+@media screen and (min-width: 601px) {
+   body {
+       background-color: #a27171; /* Change the background color for tablet/desktop */
+   }
+
+   form {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+   }
+
+   label {
+       text-align: right;
+       margin-bottom: 0;
+       padding-right: 10px;
+   }
+
+   input[type="radio"] {
+       width: auto;
+       margin-bottom: 0;
+   }
+}
+
+/* Media query for mobile devices (up to 600px) */
+@media screen and (max-width: 600px) {
+   body {
+       background-color: #e0e0e0; /* Change the background color for mobile devices */
+   }
+
+   label {
+       font-size: 1.2em; /* Increase the font size for labels on mobile devices */
+   }
+}
